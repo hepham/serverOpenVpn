@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  openvpn_app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./serverOpenVPN:/app/serverOpenVPN
+    environment:
+      - FLASK_ENV=development
